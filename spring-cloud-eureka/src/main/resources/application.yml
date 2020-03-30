@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: b3
+eureka:
+  server:
+    enable-self-preservation: false

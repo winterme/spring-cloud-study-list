@@ -1,0 +1,4 @@
+com\zzq\SpringCloudRibbonApplication.class
+com\zzq\config\RestTempConfig.class
+com\zzq\service\ServiceAdminService.class
+com\zzq\controller\ServiceAdminController.class

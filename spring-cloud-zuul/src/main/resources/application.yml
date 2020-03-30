@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: zuul
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:8761/eureka/
+server:
+  port: 8085
+zuul:
+  routes:
+    api-admin:
+      path: /api/admin/**
+      serviceId: service-admin
+    api-study:
+      path: /api/study/**
+      serviceId: study-consume
+logging:
+  level:
+    com.netflix: debug

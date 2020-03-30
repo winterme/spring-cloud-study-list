@@ -1,0 +1,5 @@
+com\zzq\SpringCloudZuulApplication.class
+com\zzq\fallback\AdminFallbackProvider$1.class
+com\zzq\fallback\AdminFallbackProvider.class
+com\zzq\fallback\StudyFallbackProvider.class
+com\zzq\fallback\StudyFallbackProvider$1.class
