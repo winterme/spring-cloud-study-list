@@ -5,14 +5,19 @@ import com.netflix.zuul.context.RequestContext;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
+import java.io.IOException;
 
 /**
- *  网关认证过滤器（Demo演示，实际根据自身业务考虑实现）
+ * 网关认证过滤器（Demo演示，实际根据自身业务考虑实现）
+ *
  * @author Levin
  * @date 2017-08-14.
  */
 @Component
-public class GatewayZuulFilter extends ZuulFilter {
+public class GatewayZuulFilterPost extends ZuulFilter {
 
     /**
      * per：路由之前，如实现认证、记录调试信息等
@@ -22,7 +27,7 @@ public class GatewayZuulFilter extends ZuulFilter {
      */
     @Override
     public String filterType() {
-        return "pre";
+        return "post";
     }
 
     /**
@@ -30,7 +35,7 @@ public class GatewayZuulFilter extends ZuulFilter {
      */
     @Override
     public int filterOrder() {
-        return 0;
+        return 1;
     }
 
     /**
@@ -46,14 +51,23 @@ public class GatewayZuulFilter extends ZuulFilter {
      */
     @Override
     public Object run() {
-        /*RequestContext ctx = RequestContext.getCurrentContext();
-        HttpServletRequest request = ctx.getRequest();
+        RequestContext ctx = RequestContext.getCurrentContext();
+        HttpServletResponse response = ctx.getResponse();
+        /*HttpServletRequest request = ctx.getRequest();
         String token = request.getHeader("token");
         if(token == null) {
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(404);
             ctx.setResponseBody("token cannot be empty");
         }*/
+
+        /*int status = response.getStatus();
+        if (status == 404) {
+            ctx.setSendZuulResponse(false);
+            ctx.setResponseStatusCode(404);
+            ctx.setResponseBody("{\"code\": 404}");
+        }*/
+
         return null;
     }
 }

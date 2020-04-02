@@ -28,7 +28,7 @@ public class GetDataController {
         map.put("name", "zhangzq");
         map.put("job", "dev");
 
-        return objectMapper.writeValueAsString(map);
+        return map;
     }
 
     /**

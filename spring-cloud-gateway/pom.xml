@@ -10,10 +10,10 @@
     </parent>
     <groupId>com.zzq</groupId>
     <packaging>jar</packaging>
-    <artifactId>spring-cloud-ribbon</artifactId>
+    <artifactId>spring-cloud-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-ribbon</name>
-    <description>spring-cloud-ribbon</description>
+    <name>spring-cloud-gateway</name>
+    <description>spring-cloud-gateway</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -21,42 +21,19 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter</artifactId>
-        </dependency>
-
-        <!-- web启动 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-
         <!-- spring cloud eureka  start-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
         <!-- spring cloud eureka  end-->
 
-        <!-- ribbon -->
+        <!--  gateway -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-            <version>2.1.0.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -72,7 +49,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>spring-cloud-ribbon</finalName>
+        <finalName>spring-cloud-gateway</finalName>
         <plugins>
 
             <!-- 忽略测试 -->
@@ -90,9 +67,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.zzq.SpringCloudRibbonApplication</mainClass>
-                </configuration>
             </plugin>
         </plugins>
     </build>

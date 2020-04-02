@@ -16,21 +16,10 @@ import org.springframework.web.context.request.RequestContextListener;
 @SpringBootApplication
 @EnableFeignClients
 @EnableHystrixDashboard //熔断器仪表盘支持
-//@EnableHystrix
 public class SpringCloudFeignApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringCloudFeignApplication.class,args);
     }
-
-
-    /**
-     * 添加 RequestContextListener，解决 RequestContextHolder .getRequestAttributes() 获取不到的bug
-     * @return
-     */
-    /*@Bean
-    public RequestContextListener requestContextListener(){
-        return new RequestContextListener();
-    }*/
 
 }

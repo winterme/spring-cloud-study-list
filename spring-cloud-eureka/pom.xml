@@ -64,7 +64,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>spring-cloud-study</finalName>
+        <finalName>spring-cloud-eureka</finalName>
         <plugins>
 
             <!-- 忽略测试 -->

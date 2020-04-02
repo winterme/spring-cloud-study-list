@@ -33,6 +33,7 @@ public class UserInfoController {
     @RequestMapping("/add")
     @ResponseBody
     public Object add() {
+        int flag = 10 / 0;
         UserInfo userInfo = new UserInfo();
         userInfo.setUsername("zhangzq");
         userInfo.setPassword("pkusoft");

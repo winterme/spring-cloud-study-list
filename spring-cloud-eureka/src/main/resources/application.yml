@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: b3
+    active: b9
 eureka:
   server:
     enable-self-preservation: false

@@ -11,10 +11,14 @@ zuul:
   routes:
     api-admin:
       path: /api/admin/**
-      serviceId: service-admin
+      # serviceId: service-admin
+      url: http://pkusoft.net/
     api-study:
       path: /api/study/**
       serviceId: study-consume
 logging:
   level:
-    com.netflix: debug
+    com.netflix: info
+hystrix:
+  metrics:
+    enabled: true
